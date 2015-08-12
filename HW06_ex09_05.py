@@ -16,11 +16,25 @@
 # Imports
 
 # Body
+def uses_all(word, letters):
+	"""Fuction to test if a string contains all of the required letters"""
+	for char in letters:
+		if char not in word:
+			return False
+	return True
 
+def how_many_words(fin, letters):
+		count = 0
+		for word in fin:	
+			if uses_all(word, letters):
+				count += 1
+		return count
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+      print "Words that use all aeiou: " + str(how_many_words(open("words.txt"),"aeiou"))
+      print "Words that use all aeiouy: " + str(how_many_words(open("words.txt"),"aeiouy"))
+
 
 if __name__ == '__main__':
     main()

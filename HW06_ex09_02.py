@@ -13,11 +13,35 @@
 # Imports
 
 # Body
+def has_no_e(word):
+	if 'e' in word:
+		return False
+	else:
+		return True
+
+def writing_no_e_words():
+	with open("words.txt") as fin:
+		count = 0
+		no_e_count = 0
+		no_e_words = ''
+		for word in fin:
+			count += 1
+			if has_no_e(word) == True:
+				no_e_count += 1
+				no_e_words = no_e_words + word
+		decimal = float(no_e_count -1) / count
+		str_decimal = str(decimal)
+		percent = str_decimal[2:4]
+		print no_e_words
+		print "Percentage of all words: " + percent + '%' + '\n'
 
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+      # Call your function(s) here.
+    
+    # has_no_e('blue')
+    writing_no_e_words()
 
 if __name__ == '__main__':
     main()
